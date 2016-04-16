@@ -6,7 +6,7 @@
         },
         {
             "name": "Linux",
-            "includePath": ["/usr/include"]
+            "includePath": ["/usr/include", "/home/juniair/work/embeded/lib"]
         },
         {
             "name": "Win32",
