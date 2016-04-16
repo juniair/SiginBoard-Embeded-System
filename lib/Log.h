@@ -1,22 +1,26 @@
 #ifndef _LOG_H_
 #define _LOG_H_
 
-#include "required_lib.h"
-typedef char* TAG;
-typedef char* MESSAGE;
+namespace System {
+    #include "required_lib.h"
+    typedef char* TAG;
+    typedef char* MESSAGE;
 
-typedef struct Log{
-    TAG tag;
-    MESSAGE log_message;
-    void print(TAG, MESSAGE);
-    
-} Log;
+    class Log {
+    private:
+        
 
-void log_print(Log log)
-{
-    File *fp = fopen("log.txt", "a+");
-    
-    fclose(fp);    
-}
+        void logToFile(TAG tag, MESSAGE msg) const {
+            File *file = fopen("log.txt")
+        }
+    public:
+        static void print(TAG tag, MESSAGE msg) const {
+            prtinf("%s: %s\n", tag, msg);
+            logToFile(tag, msg);
+        }
+        
+    };    
+};
+
     
 #endif 
