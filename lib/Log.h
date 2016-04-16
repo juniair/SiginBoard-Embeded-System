@@ -1,5 +1,5 @@
-#ifndef _LOG_H_
-#define _LOG_H_
+#ifndef _LOG_CLASS_H_
+#define _LOG_CLASS_H_
 
 namespace System {
     #include "required_lib.h"
@@ -8,7 +8,7 @@ namespace System {
 
     class Log {
     private:
-        
+        std::chrono::duration
 
         void logToFile(TAG tag, MESSAGE msg) const {
             File *file = fopen("log.txt")
