@@ -1,4 +1,7 @@
 #include <stdio.h>
+<<<<<<< HEAD
+#include <stdlib.h>
+=======
 #include <stdlib.h>
 #include <string.h>
 
@@ -14,3 +17,4 @@ int main(int argc, int argv[])
     
    
 }
+>>>>>>> origin/master
