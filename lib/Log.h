@@ -2,18 +2,21 @@
 #define _LOG_H_
 
 #include "required_lib.h"
-#define LOG_SOCKET "SOCKET"
+typedef char* TAG;
+typedef char* MESSAGE;
 
 typedef struct Log{
-    char* TAG;
-    char* log_message;
+    TAG tag;
+    MESSAGE log_message;
+    void print(TAG, MESSAGE);
+    
 } Log;
 
-void Log(Log log)
+void log_print(Log log)
 {
     File *fp = fopen("log.txt", "a+");
     
     fclose(fp);    
 }
     
-#endif
+#endif 
