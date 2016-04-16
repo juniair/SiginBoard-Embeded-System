@@ -10,16 +10,20 @@ namespace System {
 	    private:
 	        static void makeLogFile(std::string log) 
 			{
-	            FILE *file = fopen("log.txt", "a+");
-	            fclose(file)
+				std::ofstream file("log.txt");
+
+				file << log;
+	 			file.close();           
 	        }
 	    public:
 	        static void print(TAG tag, MESSAGE msg) 
 			{
 				auto now = std::chrono::system_clock::now();
-				std::string time = std::chrono::system_clock::to_time_t(now);
-				std::string log = time + " " + tag + ": " + msg;
-    	        makeLogFile(log);
+				auto time = std::chrono::system_clock::to_time_t(now);
+				std::string logDate = std::ctime(&time);
+				
+				std::string logInfomation = logDate - "\n" + " " + tag + ": " + msg + \n;
+    	        makeLogFile(logInfomation);
     	    }
 	};
 };
